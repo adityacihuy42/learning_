@@ -1,0 +1,153 @@
+/* ===== BODY & BACKGROUND ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #ffccd5, #ff9ac1 70%, #111 100%);
+  font-family: 'Dancing Script', cursive;
+  color: #fff;
+  position: relative;
+}
+
+/* ===== STARS BACKGROUND ===== */
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.stars-container::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow: 
+    100px 200px #fff, 300px 150px #fff, 500px 400px #fff,
+    700px 100px #fff, 900px 300px #fff, 1200px 200px #fff;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* ===== MATRIX RAIN ===== */
+#matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  mix-blend-mode: lighten;
+}
+
+/* ===== CONTENT TEXT ===== */
+.content-display {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff7eb9, 0 0 20px #ff4c91;
+  z-index: 1000;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* ===== HEART EFFECT ===== */
+.heart {
+  position: fixed;
+  font-size: 24px;
+  animation: float-heart 4s ease-in forwards, pulse 0.5s infinite alternate;
+  pointer-events: none;
+  text-shadow: 0 0 5px #fff, 0 0 15px #ff4c91;
+}
+
+@keyframes float-heart {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-50vh) scale(1.2); }
+  100% { transform: translateY(-100vh) scale(0.8); opacity: 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.3); }
+}
+
+/* ===== MUSIC BUTTON ===== */
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 12px 18px;
+  background: linear-gradient(45deg, #ff7eb9, #ff4c91);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 0 10px #ff4c91, 0 0 20px #ff7eb9;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.music-control:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #ff4c91, 0 0 30px #ff7eb9;
+}
+
+/* ===== GIFT IMAGE ===== */
+#gift-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60%;
+  max-height: 60%;
+  z-index: 1000;
+  box-shadow: 0 0 30px #ff7eb9, 0 0 60px #ff4c91 inset;
+  border-radius: 15px;
+  animation: pulseGift 2s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes pulseGift {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* ===== FIREWORK & BOOK CONTAINER ===== */
+.book-container,
+.firework-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ===== CANVAS ===== */
+.canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
